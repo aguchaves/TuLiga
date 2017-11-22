@@ -7,6 +7,9 @@
 <ion-content padding>
   <ion-list>
     <button ion-item class="item-ios" *ngFor="let team of (teams | async)" (click)="selectTeam(team)">
+      <ion-avatar item-start>
+        <img src=""/>
+      </ion-avatar>
       {{ team.club }}
     </button>
   </ion-list>
