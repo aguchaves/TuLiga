@@ -1,12 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>SelectTeam</ion-title>
+    <ion-title>Elegí tu equipo</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let team of (teams | async)" (click)="selectTeam(team)">
+    <button ion-item class="item-ios" *ngFor="let team of (teams | async)" (click)="selectTeam(team)">
       {{ team.club }}
     </button>
   </ion-list>

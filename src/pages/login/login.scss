@@ -3,14 +3,15 @@ page-login {
   .header {
     .toolbar {
       &-background-md {
-          border-color: #b2b2b2;
-          background: #13181C;
+          background: color($colors, dark);
+          border-color: color($colors, font);
       }
 
       &-title {
         &.toolbar-title-md {
-          text-align: center;
           color: #fff;
+          text-align: center;
+          text-transform: uppercase;
         }
       }
 
@@ -19,22 +20,22 @@ page-login {
 
   .content {
     .scroll-content {
-      background: #333;
+      background: color($colors, backg);
       .list {
         margin-bottom: 30px;
         .item-md {
-          padding-left: 0;
           background-color: transparent;
           color: #fff;
+          padding-left: 0;
           &.item-input {
 
           }
         }
       }
       .button-md {
-        background-color: #F2101B;
-        margin-bottom: 10px;
+        background-color: color($colors, primary);
         height: 4rem;
+        margin-bottom: 15px;
       }
     }
   }
