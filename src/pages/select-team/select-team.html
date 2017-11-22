@@ -8,7 +8,7 @@
   <ion-list>
     <button ion-item class="item-ios" *ngFor="let team of (teams | async)" (click)="selectTeam(team)">
       <ion-avatar item-start>
-        <img src=""/>
+        <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{team.logo}}">
       </ion-avatar>
       {{ team.club }}
     </button>
