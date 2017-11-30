@@ -30,20 +30,27 @@ export class FirebaseProvider {
     return new Promise((resolve, reject) => {
       this.auth.signInWithEmailAndPassword(email, password)
         .then(user => {
-          this.app.database().ref(`/users/${user.uid}`).once('value',snapshot => {
-            if (snapshot.val()) {
-              user.storedData = snapshot.val();
-            }
-
-            this.userData = user;
-            resolve(user);
-          });
+          this.setUserData(user).then(user => resolve(user));
         })
         .catch(error => {
           console.log('Error on Login ->', error);
 
           reject(error);
         });
+    });
+  }
+
+  setUserData(user) {
+    return new Promise(resolve => {
+      this.app.database().ref(`/users/${user.uid}`).once('value',snapshot => {
+        if (snapshot.val()) {
+          user.storedData = snapshot.val();
+        }
+
+        this.userData = user;
+        console.log('setUserData', user);
+        resolve(user);
+      });
     });
   }
 
@@ -72,6 +79,18 @@ export class FirebaseProvider {
         this.userData.storedData.team = team;
 
         resolve(this.userData)
+      });
+    });
+  }
+
+  isUserLoggedIn() {
+    return new Promise(resolve => {
+      this.app.auth().onAuthStateChanged((user) => {
+        if (user) {
+          this.setUserData(user).then(userDb => resolve(userDb));
+        } else {
+          resolve(false);
+        }
       });
     });
   }

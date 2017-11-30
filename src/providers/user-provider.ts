@@ -3,7 +3,6 @@ import 'rxjs/add/operator/map';
 import { FirebaseProvider } from "./firebase-provider";
 import { BehaviorSubject } from 'rxjs';
 
-
 @Injectable()
 export class UserProvider {
   private _userData: BehaviorSubject<any>;
@@ -32,6 +31,13 @@ export class UserProvider {
     this.firebaseProvider.setTeam(this._userData.getValue().uid, team).then(userData => {
       this._userData.next(userData);
     });
+  }
 
+  isLoggedIn() {
+    return new Promise(resolve => {
+      this.firebaseProvider.isUserLoggedIn().then(userData => {
+        this._userData.next(userData);
+      });
+    });
   }
 }

@@ -28,10 +28,6 @@ export class SelectTeamPage {
     }, err => console.error(err)); // TODO: error handling
   }
 
-  ionViewDidLeave() {
-
-  }
-
   handleResults(userData) {
     if (userData && userData.storedData && userData.storedData.team !== '') {
       this.navCtrl.push(TabsPage);
