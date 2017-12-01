@@ -11,24 +11,29 @@
   <ion-list>
     <ion-card *ngFor="let match of matches">
       <ion-row>
-        <ion-col col-4>
-          {{match.logolocal}}
-          {{match.local}}
+        <ion-col col-5>
+          <div class="match-team">
+            <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logolocal}}" alt="">
+            <p>{{match.local}}</p>
+          </div>
         </ion-col>
-        <ion-col col-4>VS</ion-col>
-        <ion-col col-4>
-          <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logovisitante}}" alt="">
-          {{match.visitante}}
+        <ion-col col-2 class="divisor"><h1>VS</h1></ion-col>
+        <ion-col col-5>
+          <div class="match-team">
+            <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logovisitante}}" alt="">
+            <p>{{match.visitante}}</p>
+          </div>
         </ion-col>
       </ion-row>
       <ion-card-content>
-        <ion-card-title>
-          Nine Inch Nails Live
+        <ion-card-title class="match-data">
+          <p>{{match.fecha}}</p>
+          <p>{{match.estadio}}</p>
         </ion-card-title>
       </ion-card-content>
     </ion-card>
-    <ion-item *ngFor="let match of matches">
+    <!-- <ion-item *ngFor="let match of matches">
       {{match.local}} VS {{match.visitante}}
-    </ion-item>
+    </ion-item> -->
   </ion-list>
 </ion-content>

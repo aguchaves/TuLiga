@@ -1,3 +1,27 @@
 page-contact {
-
+  .card {
+    padding: 10px;
+  }
+  .match{
+    &-team {
+      text-align: center;
+      p {
+        margin-top: 15px;
+        color: color($colors, light);
+      }
+    }
+    &-data {
+      p {
+        color: color($colors, light);        
+      }
+    }
+  }
+  .divisor {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    h1 {
+      width: 100%;
+    }
+  }
 }
