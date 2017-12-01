@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user-provider';
 import { TeamsProvider } from '../../providers/teams-provider';
-import _each from 'lodash/each';
-import _toUpper from 'lodash/toupper';
+import _ from 'lodash';
 
 @Component({
   selector: 'page-contact',
@@ -27,9 +26,9 @@ export class MatchesPage {
     if (userData && userData.storedData && userData.storedData.team !== '') {
       console.log(this.teamsProvider);
       this.teamsProvider.getMatches().then((results) => {
-        this.teamSelected = _toUpper(userData.storedData.team);
+        this.teamSelected = _.toUpper(userData.storedData.team);
 
-        _each(results, (team) => {
+        _.each(results, (team) => {
           if (team.local === this.teamSelected || team.visitante === this.teamSelected) {
             this.matches.push(team);
           }

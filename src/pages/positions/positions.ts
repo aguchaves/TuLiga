@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { UserProvider } from '../../providers/user-provider';
 import { TeamsProvider } from '../../providers/teams-provider';
-import _toUpper from 'lodash/toupper';
+import _ from 'lodash';
 
 @Component({
   selector: 'page-about',
@@ -25,7 +25,7 @@ export class PositionsPage {
   handleResults(userData) {
     if (userData && userData.storedData && userData.storedData.team !== '') {
       this.teamsProvider.getPositions().then((results) => {
-        this.teamSelected = _toUpper(userData.storedData.team);
+        this.teamSelected = _.toUpper(userData.storedData.team);
 
         this.positions = results;
         console.log(this.positions);
