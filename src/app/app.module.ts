@@ -5,8 +5,8 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
 // Pages
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { PositionsPage } from '../pages/positions/positions';
+import { MatchesPage } from '../pages/matches/matches';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -23,8 +23,8 @@ import { TeamsProvider } from '../providers/teams-provider';
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    PositionsPage,
+    MatchesPage,
     HomePage,
     TabsPage,
     LoginPage,
@@ -38,8 +38,8 @@ import { TeamsProvider } from '../providers/teams-provider';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    PositionsPage,
+    MatchesPage,
     HomePage,
     TabsPage,
     LoginPage,

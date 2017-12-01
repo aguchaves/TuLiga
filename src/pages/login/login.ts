@@ -22,7 +22,6 @@ export class LoginPage {
     this.userProvider.userData.subscribe(userData => {
       this.handleResults(userData);
     }, err => console.error(err)); // TODO: error handling
-
   }
 
   ionViewDidLeave() {

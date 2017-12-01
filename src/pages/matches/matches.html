@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Proximos Partidos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h2>Proximos partidos</h2>
+  <ion-list>
+    <ion-item *ngFor="let match of matches">
+      {{match.local}} VS {{match.visitante}}
+    </ion-item>
+  </ion-list>
+</ion-content>

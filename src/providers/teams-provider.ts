@@ -8,11 +8,11 @@ declare var Promise: any;
 export class TeamsProvider {
   positions: any;
   results: any;
+  matches: any;
 
   constructor(public http: Http) {}
 
   getTeams() {
-    console.log('getTeams');
     return this.http.get('http://www.laliganacional.com.ar/api/v2/equipos').map(res => {
       let teams = [];
 
@@ -44,6 +44,18 @@ export class TeamsProvider {
           this.positions = data.datos;
 
           resolve(this.positions);
+        });
+    })
+  }
+
+  getMatches() {
+    return new Promise((resolve) => {
+      this.http.get('http://www.laliganacional.com.ar/api/v2/partidos')
+        .map(res => res.json())
+        .subscribe(data => {
+          this.matches = data.datos;
+
+          resolve(this.matches);
         });
     })
   }
