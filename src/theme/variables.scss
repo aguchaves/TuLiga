@@ -55,12 +55,16 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+$background-color: #ccc;
+$list-ios-background-color:#30363d;
+$list-md-background-color:#30363d;
+$list-wp-background-color:#30363d;
 $text-input-placeholder-color: #F2101B;
-$background-color: #30363d;
 $text-color: #f4f4f4;
 $toolbar-background: #13181C;
 $tabs-background: #13181C;
-$tabs-ios-tab-color-inactive: #f4f4f4;
+$tabs-md-tab-color-inactive: #fff;
+$tabs-ios-tab-color-inactive: #fff;
 
 // App Windows Variables
 // --------------------------------------------------

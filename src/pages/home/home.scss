@@ -1,3 +1,53 @@
+page-home {
+  .card {
+    padding: 10px;
+  }
+  .match{
+    &-team {
+      text-align: center;
+      color: color($colors, light);
+      .img-wrapper {
+        min-height: 90px;
+        max-height: 100px;
+        display: flex;
+        margin: auto;
+        img {
+          margin: auto;
+          width: 70%;
+        }
+      }
+      p {
+        color: color($colors, light);
+        font-size: 1.2rem;
+        margin-top: 15px;
+      }
+      h1 {
+        color: color($colors, light);
+      }
+    }
+    &-data {
+      background: color($colors, dark);
+      h4 {
+        color: color($colors, light);
+        text-transform: capitalize;
+      }
+      ion-icon {
+        margin-right: 10px;
+        color: color($colors, primary);
+      }
+    }
+  }
+  .divisor {
+    display: flex;
+    margin: auto;
+    text-align: center;
+    h1 {
+      width: 100%;
+      color: color($colors,light);
+    }
+  }
+
+}
 .results {
 
 }

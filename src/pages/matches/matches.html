@@ -7,29 +7,34 @@
 </ion-header>
 
 <ion-content>
-  <h2>Proximos partidos</h2>
   <ion-list>
     <ion-card *ngFor="let match of matches">
       <ion-row>
         <ion-col col-5>
           <div class="match-team">
-            <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logolocal}}" alt="">
+            <div class="img-wrapper">
+              <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logolocal}}" alt="">
+            </div>
             <p>{{match.local}}</p>
           </div>
         </ion-col>
-        <ion-col col-2 class="divisor"><h1>VS</h1></ion-col>
+        <ion-col col-2 class="divisor">
+          <h1>VS</h1>
+        </ion-col>
         <ion-col col-5>
           <div class="match-team">
-            <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logovisitante}}" alt="">
+            <div class="img-wrapper">
+              <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logovisitante}}" alt="">              
+            </div>
             <p>{{match.visitante}}</p>
           </div>
         </ion-col>
       </ion-row>
-      <ion-card-content>
-        <ion-card-title class="match-data">
-          <p>{{match.fecha}}</p>
-          <p>{{match.estadio}}</p>
-        </ion-card-title>
+      <ion-card-content class="match-data">
+        <!-- <ion-card-title class="match-data"> -->
+          <h4><ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> {{match.fecha}}</h4>
+          <h4><ion-icon name="pin"></ion-icon> {{match.estadio}}</h4>
+        <!-- </ion-card-title> -->
       </ion-card-content>
     </ion-card>
     <!-- <ion-item *ngFor="let match of matches">

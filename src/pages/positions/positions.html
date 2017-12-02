@@ -1,11 +1,35 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      posiciones
+      Posiciones
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<h2>Posiciones de mi equipo</h2>
+  <ion-list>
+    <ion-card *ngFor="let position of positions">
+      <ion-row>
+        <ion-col col-5>
+          <div class="match-team">
+            <!-- <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{match.logolocal}}" alt=""> -->
+            <p>{{position.club}}</p>
+          </div>
+        </ion-col>
+        <ion-col col-2 class="divisor">
+          <h1>VS</h1>
+        </ion-col>
+
+      </ion-row>
+      <ion-card-content class="match-data">
+        <!-- <ion-card-title class="match-data"> -->
+          <!-- <h4><ion-icon ios="ios-calendar" md="md-calendar"></ion-icon> {{match.fecha}}</h4>
+          <h4><ion-icon name="pin"></ion-icon> {{match.estadio}}</h4> -->
+        <!-- </ion-card-title> -->
+      </ion-card-content>
+    </ion-card>
+    <!-- <ion-item *ngFor="let match of matches">
+      {{match.local}} VS {{match.visitante}}
+    </ion-item> -->
+  </ion-list>
 </ion-content>
