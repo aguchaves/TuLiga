@@ -1,13 +1,12 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Proximos Partidos
-    </ion-title>
+    <button ion-button menuToggle="left">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Proximos partidos</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
-  <h2>Proximos partidos</h2>
   <ion-list>
     <ion-card *ngFor="let match of matches">
       <ion-row>

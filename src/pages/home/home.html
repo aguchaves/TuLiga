@@ -1,11 +1,13 @@
 <ion-header>
   <ion-navbar>
+    <button ion-button menuToggle="left">
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Resultados del equipo</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Resultados de mi equipo</h2>
   <ion-list>
     <ion-item *ngFor="let result of results">
       {{result.local}} VS {{result.visitante}}
