@@ -32,4 +32,8 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
+  navigateToPage(pageName) {
+    this.rootPage = pageName;
+  }
 }

@@ -1,13 +1,16 @@
 <ion-menu [content]="content">
   <ion-content>
     <ion-list>
-      <ion-item>
+      <ion-item menuClose (click)="navigateToPage('TabsPage')">
+        Inicio
+      </ion-item>
+      <ion-item menuClose (click)="navigateToPage('NewsPage')">
         Noticias
       </ion-item>
-      <ion-item>
+      <ion-item menuClose (click)="navigateToPage('TeamPage')">
         Equipo
       </ion-item>
-      <ion-item>
+      <ion-item menuClose (click)="navigateToPage('SettingsPage')">
         Ajustes
       </ion-item>
     </ion-list>
