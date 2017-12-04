@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserProvider } from "../providers/user-provider";
+import { LoadingController } from 'ionic-angular';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
@@ -21,17 +22,28 @@ export class MyApp {
     'TeamPage': TeamPage,
     'TabsPage': TabsPage,
   };
+  loading: Boolean = true;
 
   constructor(
     platform: Platform,
     statusBar: StatusBar,
     splashScreen: SplashScreen,
-    private userProvider: UserProvider
+    private userProvider: UserProvider,
+    public loadingCtrl: LoadingController,
   ) {
+    let loader = this.loadingCtrl.create({
+      content: "Cargando...",
+      duration: 1000,
+    });
+
+    loader.present();
+
     this.userProvider.isLoggedIn().then((user) => {
       if (user) {
         this.rootPage = TabsPage;
       }
+
+      loader.dismiss();
     });
 
     platform.ready().then(() => {
@@ -43,7 +55,6 @@ export class MyApp {
   }
 
   navigateToPage(pageName) {
-    console.log(this.pages);
     this.rootPage = this.pages[pageName];
   }
 }
