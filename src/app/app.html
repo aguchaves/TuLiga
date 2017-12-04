@@ -1,1 +1,19 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-content>
+    <ion-list>
+      <ion-item menuClose (click)="navigateToPage('TabsPage')">
+        Inicio
+      </ion-item>
+      <ion-item menuClose (click)="navigateToPage('NewsPage')">
+        Noticias
+      </ion-item>
+      <ion-item menuClose (click)="navigateToPage('TeamPage')">
+        Equipo
+      </ion-item>
+      <ion-item menuClose (click)="navigateToPage('SettingsPage')">
+        Ajustes
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav #content [root]="rootPage"></ion-nav>

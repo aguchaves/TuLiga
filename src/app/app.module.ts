@@ -8,7 +8,6 @@ import { HttpModule } from '@angular/http';
 import { PositionsPage } from '../pages/positions/positions';
 import { MatchesPage } from '../pages/matches/matches';
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { SelectTeamPage } from '../pages/select-team/select-team';
 
@@ -26,7 +25,6 @@ import { TeamsProvider } from '../providers/teams-provider';
     PositionsPage,
     MatchesPage,
     HomePage,
-    TabsPage,
     LoginPage,
     SelectTeamPage
   ],
@@ -41,7 +39,6 @@ import { TeamsProvider } from '../providers/teams-provider';
     PositionsPage,
     MatchesPage,
     HomePage,
-    TabsPage,
     LoginPage,
     SelectTeamPage
   ],

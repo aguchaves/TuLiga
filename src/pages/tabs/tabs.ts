@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-
+import { IonicPage } from 'ionic-angular';
 import { PositionsPage } from '../positions/positions';
 import { MatchesPage } from '../matches/matches';
 import { HomePage } from '../home/home';
 
+@IonicPage()
 @Component({
+  selector: 'tabs',
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
