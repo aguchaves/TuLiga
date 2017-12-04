@@ -5,7 +5,7 @@ import { TeamsProvider } from '../../providers/teams-provider';
 import _ from 'lodash';
 
 @Component({
-  selector: 'page-contact',
+  selector: 'page-matches',
   templateUrl: 'matches.html'
 })
 export class MatchesPage {

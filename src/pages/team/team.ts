@@ -4,10 +4,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @IonicPage()
 @Component({
-  selector: 'page-news',
-  templateUrl: 'news.html',
+  selector: 'page-team',
+  templateUrl: 'team.html',
 })
-export class NewsPage {
+export class TeamPage {
 
   constructor(
     public navCtrl: NavController,
