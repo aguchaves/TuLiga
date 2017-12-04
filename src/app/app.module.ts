@@ -10,14 +10,19 @@ import { MatchesPage } from '../pages/matches/matches';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SelectTeamPage } from '../pages/select-team/select-team';
-
+import { TabsPage } from "../pages/tabs/tabs"
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NewsPage } from "../pages/news/news"
+import { SettingsPage } from "../pages/settings/settings";
+import { TeamPage } from "../pages/team/team";
 
 // Providers
 import { FirebaseProvider } from '../providers/firebase-provider';
 import { UserProvider } from '../providers/user-provider';
 import { TeamsProvider } from '../providers/teams-provider';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +31,11 @@ import { TeamsProvider } from '../providers/teams-provider';
     MatchesPage,
     HomePage,
     LoginPage,
-    SelectTeamPage
+    SelectTeamPage,
+    TabsPage,
+    NewsPage,
+    SettingsPage,
+    TeamPage,
   ],
   imports: [
     HttpModule,
@@ -40,7 +49,11 @@ import { TeamsProvider } from '../providers/teams-provider';
     MatchesPage,
     HomePage,
     LoginPage,
-    SelectTeamPage
+    SelectTeamPage,
+    TabsPage,
+    NewsPage,
+    SettingsPage,
+    TeamPage,
   ],
   providers: [
     FirebaseProvider,
@@ -48,7 +61,8 @@ import { TeamsProvider } from '../providers/teams-provider';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserProvider,
-    TeamsProvider
+    TeamsProvider,
+    InAppBrowser,
   ]
 })
 export class AppModule {}

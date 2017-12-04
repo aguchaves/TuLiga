@@ -1,25 +1,26 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TeamPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @IonicPage()
 @Component({
-  selector: 'page-team',
-  templateUrl: 'team.html',
+  selector: 'page-news',
+  templateUrl: 'news.html',
 })
-export class TeamPage {
+export class NewsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TeamPage');
-  }
+    console.log('ionViewDidLoad NewsPage');
 
+    const browser = this.iab.create('http://www.laliganacional.com.ar/laliga/club/san-lorenzo/page/equipo');
+
+    browser.show();
+  }
 }
+

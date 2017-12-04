@@ -6,12 +6,21 @@ import { UserProvider } from "../providers/user-provider";
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { SettingsPage } from "../pages/settings/settings";
+import { NewsPage } from "../pages/news/news";
+import { TeamPage } from "../pages/team/team";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage: any = LoginPage;
+  pages: any = {
+    'SettingsPage': SettingsPage,
+    'NewsPage': NewsPage,
+    'TeamPage': TeamPage,
+    'TabsPage': TabsPage,
+  };
 
   constructor(
     platform: Platform,
@@ -34,6 +43,7 @@ export class MyApp {
   }
 
   navigateToPage(pageName) {
-    this.rootPage = pageName;
+    console.log(this.pages);
+    this.rootPage = this.pages[pageName];
   }
 }
