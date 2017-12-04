@@ -26,8 +26,8 @@ export class PositionsPage {
     if (userData && userData.storedData && userData.storedData.team !== '') {
       this.teamsProvider.getPositions().then((results) => {
         this.teamSelected = _.toUpper(userData.storedData.team);
-
-        this.positions = results;
+        this.positions = _.map(results, (position) => position);
+        // this.positions = results;
         console.log(this.positions);
       });
     }

@@ -7,5 +7,41 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-list *ngFor="let position of positions">
+    <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{position.logo}}">
+        </ion-avatar>
+        <h2>{{position.posicion}}. {{position.club}}</h2>
+        <ion-row>
+          <ion-col col-4>
+            <h4>PJ: {{position.pg}}</h4>
+          </ion-col>
+          <ion-col col-4>
+            <h4>PG: {{position.pg}}</h4>
+          </ion-col>
+          <ion-col col-4>
+            <h4>PP: {{position.pg}}</h4>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            <h4>%PG: {{position.ppg}}</h4>
+          </ion-col>
+          <ion-col col-4>
+            <h4>PGF: {{position.pgf}}</h4>
+          </ion-col>
+          <ion-col col-4>
+            <h4>PGC: {{position.pgc}}</h4>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+
+
+    </ion-card>
+
+
+  </ion-list>
 </ion-content>
