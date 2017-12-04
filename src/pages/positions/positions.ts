@@ -26,11 +26,17 @@ export class PositionsPage {
     if (userData && userData.storedData && userData.storedData.team !== '') {
       this.teamsProvider.getPositions().then((results) => {
         this.teamSelected = _.toUpper(userData.storedData.team);
-        this.positions = _.map(results, (position) => position);
-        // this.positions = results;
+        this.positions = _.map(results, (position) => {
+          // console.log("ASDASD",position);
+          var win = position.ppg;
+          win = Number(win).toFixed(2);
+          return Object.assign({},position,{ppg:win});
+        });
         console.log(this.positions);
       });
     }
   }
+
+
 
 }

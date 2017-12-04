@@ -1,5 +1,34 @@
 page-positions {
   .card {
-    padding: 10px;
+    .position {
+      color: color($colors, light);
+      img {
+        border-radius: 0;
+        width: 55px;
+        height: 55px;
+      }
+      &-title {
+
+        h2 {
+          color: #fff;
+          font-size: 2rem;
+          span {
+            color: color($colors, primary);
+            font-size: 2.5rem;
+          }
+        }
+      }
+      &-data {
+        background-color:  color($colors, dark);
+        padding-top: 13px !important;
+        text-align: center;
+        h4 {
+          color: color($colors, light);
+        }
+        .col {
+          padding: 2px;
+        }
+      }
+    }
   }
 }

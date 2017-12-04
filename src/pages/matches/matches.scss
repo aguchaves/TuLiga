@@ -6,13 +6,13 @@ page-matches {
     &-team {
       text-align: center;
       .img-wrapper {
-        min-height: 90px;
+        min-height: 80px;
         max-height: 100px;
-        display: flex;
         margin: auto;
         img {
           margin: auto;
-          width: 70%;
+          width: 60%;
+          max-height: 80px;
         }
       }
       p {
@@ -22,6 +22,7 @@ page-matches {
     }
     &-data {
       background: color($colors, dark);
+      text-align: center;
       h4 {
         color: color($colors, light);
         text-transform: capitalize;
