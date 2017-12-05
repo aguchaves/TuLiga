@@ -40,4 +40,8 @@ export class UserProvider {
       });
     });
   }
+
+  logOut() {
+    return this.firebaseProvider.logOut();
+  }
 }

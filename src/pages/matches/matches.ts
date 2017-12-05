@@ -24,7 +24,6 @@ export class MatchesPage {
 
   handleResults(userData) {
     if (userData && userData.storedData && userData.storedData.team !== '') {
-      console.log(this.teamsProvider);
       this.teamsProvider.getMatches().then((results) => {
         this.teamSelected = _.toUpper(userData.storedData.team);
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserProvider } from "../providers/user-provider";
@@ -23,6 +23,8 @@ export class MyApp {
     'TabsPage': TabsPage,
   };
   loading: Boolean = true;
+
+  @ViewChild(Nav) navChild:Nav;
 
   constructor(
     platform: Platform,
@@ -56,5 +58,9 @@ export class MyApp {
 
   navigateToPage(pageName) {
     this.rootPage = this.pages[pageName];
+  }
+
+  logOut() {
+    this.userProvider.logOut().then(() => this.rootPage = LoginPage);
   }
 }

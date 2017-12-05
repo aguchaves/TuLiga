@@ -93,4 +93,8 @@ export class FirebaseProvider {
       });
     });
   }
+
+  logOut() {
+    return this.app.auth().signOut();
+  }
 }
