@@ -16,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { NewsPage } from "../pages/news/news"
 import { SettingsPage } from "../pages/settings/settings";
 import { TeamPage } from "../pages/team/team";
+import { HistoryPage } from "../pages/history/history"
 
 // Providers
 import { FirebaseProvider } from '../providers/firebase-provider';
@@ -36,6 +37,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     NewsPage,
     SettingsPage,
     TeamPage,
+    HistoryPage,
   ],
   imports: [
     HttpModule,
@@ -54,6 +56,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     NewsPage,
     SettingsPage,
     TeamPage,
+    HistoryPage,
   ],
   providers: [
     FirebaseProvider,

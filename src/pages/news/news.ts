@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { TabsPage } from '../tabs/tabs';
 
 @IonicPage()
 @Component({
@@ -16,10 +17,25 @@ export class NewsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewsPage');
+    const browser = this.iab.create('http://www.laliganacional.com.ar/laliga/club/san-lorenzo/page/noticias', '_self', {
+      location: 'no'
+    });
 
-    const browser = this.iab.create('http://www.laliganacional.com.ar/laliga/club/san-lorenzo/page/noticias');
+    browser.on('loadstop').subscribe(() => {
+      console.log('loaded page');
 
-    browser.show();
+      browser.insertCSS({
+        code: '.navbar { display: none; } #clubheader { display: none; } .espacio { display: none }'
+      }).then(() => {
+        console.log('css added');
+        browser.show();
+      });
+    });
+
+    browser.on('exit').subscribe(() => {
+      console.log('closed browser');
+      this.navCtrl.push(TabsPage);
+    });
+
   }
 }
