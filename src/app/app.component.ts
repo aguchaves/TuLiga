@@ -11,6 +11,10 @@ import { SettingsPage } from "../pages/settings/settings";
 import { NewsPage } from "../pages/news/news";
 import { TeamPage } from "../pages/team/team";
 import { HistoryPage } from "../pages/history/history";
+import { ShopPage } from "../pages/shop/shop";
+import { SocialPage } from "../pages/social/social";
+import { TvPage } from "../pages/tv/tv";
+import { ContactPage } from "../pages/contact/contact";
 
 @Component({
   templateUrl: 'app.html'
@@ -23,6 +27,10 @@ export class MyApp {
     'TeamPage': TeamPage,
     'TabsPage': TabsPage,
     'HistoryPage': HistoryPage,
+    'ShopPage': ShopPage,
+    'SocialPage': SocialPage,
+    'TvPage': TvPage,
+    'ContactPage': ContactPage,
   };
   loading: Boolean = true;
 

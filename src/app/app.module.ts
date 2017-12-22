@@ -17,6 +17,10 @@ import { NewsPage } from "../pages/news/news"
 import { SettingsPage } from "../pages/settings/settings";
 import { TeamPage } from "../pages/team/team";
 import { HistoryPage } from "../pages/history/history"
+import { ShopPage } from "../pages/shop/shop";
+import { SocialPage } from "../pages/social/social";
+import { TvPage } from "../pages/tv/tv";
+import { ContactPage } from "../pages/contact/contact";
 
 // Providers
 import { FirebaseProvider } from '../providers/firebase-provider';
@@ -38,6 +42,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SettingsPage,
     TeamPage,
     HistoryPage,
+    ShopPage,
+    SocialPage,
+    TvPage,
+    ContactPage,
   ],
   imports: [
     HttpModule,
@@ -57,6 +65,10 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SettingsPage,
     TeamPage,
     HistoryPage,
+    ShopPage,
+    SocialPage,
+    TvPage,
+    ContactPage,
   ],
   providers: [
     FirebaseProvider,

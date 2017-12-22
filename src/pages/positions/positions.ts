@@ -19,7 +19,7 @@ export class PositionsPage {
   ) {
     this.userProvider.userData.subscribe(userData => {
       this.handleResults(userData);
-    }, err => console.error(err)); // TODO: error handling
+    }, err => console.error(err));
   }
 
   handleResults(userData) {

@@ -6,7 +6,6 @@
     <ion-title>Resultados</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
   <ion-list>
     <ion-card *ngFor="let result of results">
@@ -34,15 +33,10 @@
         </ion-col>
       </ion-row>
       <ion-card-content class="match-data">
-        <!-- <ion-card-title class="match-data"> -->
-          <h4><ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>{{result.fecha}}</h4>
-          <h4><ion-icon name="pin"></ion-icon>{{result.estadio}}</h4>
-          <h4><ion-icon name="basketball"></ion-icon><a href="{{result.boxscore}}">Boxscore</a></h4>
-        <!-- </ion-card-title> -->
+        <h4><ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>{{result.fecha}}</h4>
+        <h4><ion-icon name="pin"></ion-icon>{{result.estadio}}</h4>
+        <h4><ion-icon name="basketball"></ion-icon><a href="{{result.boxscore}}" target="_self">Boxscore</a></h4>
       </ion-card-content>
     </ion-card>
-    <!-- <ion-item *ngFor="let match of matches">
-      {{match.local}} VS {{match.visitante}}
-    </ion-item> -->
   </ion-list>
 </ion-content>
