@@ -14,7 +14,9 @@
     {{nextGame?.visitante}}
     {{nextGame?.fecha}}
     <div *ngIf="nextGame?.isLive">
-      AHORA EN VIVO
+      <a href="{{nextGame.boxscore}}" target="_self">
+        AHORA EN VIVO
+      </a>
     </div>
   </ion-card>
   <ion-list>

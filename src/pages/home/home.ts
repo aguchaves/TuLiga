@@ -14,7 +14,9 @@ export class HomePage {
   results: Array<Object> = [];
   teamSelected: any;
   nextGames: Array<Object> = [];
-  nextGame: any;
+  nextGame: any = {
+    isLive: false,
+  };
 
   constructor(
     public navCtrl: NavController,
@@ -49,12 +51,13 @@ export class HomePage {
             && teamMatch.estado === 'SCHEDULED'
             && moment(teamMatch.fecha).isAfter(moment()) ) {
             this.nextGame = teamMatch;
+            this.nextGame.isLive = false;
           }
         });
-
+        
         const gameTime = moment(this.nextGame.fecha);
 
-        if (gameTime.isAfter(moment())) {
+        if (gameTime.isSameOrAfter(moment()) && (gameTime.hour() <= moment().hour())) {
           this.nextGame.isLive = true;
         }
       })

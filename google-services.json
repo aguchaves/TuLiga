@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "118588843377",
+    "firebase_url": "https://tu-equipo-7e1ee.firebaseio.com",
+    "project_id": "tu-equipo-7e1ee",
+    "storage_bucket": "tu-equipo-7e1ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118588843377:android:1944355f0dc3395d",
+        "android_client_info": {
+          "package_name": "com.daxdev.tuliga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118588843377-08rs236m64pbrheb6vsngqin9pfb62i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQLdJKICSyPwn9Mcm7F40cEWAYwmoRXnk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
