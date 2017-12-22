@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { TeamsProvider } from '../../providers/teams-provider';
 import { UserProvider } from '../../providers/user-provider';
 import _ from 'lodash';
+import moment from 'moment';
 
 @Component({
   selector: 'page-home',
@@ -12,6 +13,8 @@ export class HomePage {
 
   results: Array<Object> = [];
   teamSelected: any;
+  nextGames: Array<Object> = [];
+  nextGame: any;
 
   constructor(
     public navCtrl: NavController,
@@ -21,6 +24,8 @@ export class HomePage {
     this.userProvider.userData.subscribe(userData => {
       this.handleResults(userData);
     }, err => console.error(err));
+
+
   }
 
   handleResults(userData) {
@@ -34,6 +39,25 @@ export class HomePage {
           }
         });
       });
+
+      this.teamsProvider.getMatches().then(results => {
+        this.teamSelected = _.toUpper(userData.storedData.team);
+
+        _.each(results, (team) => {
+          if ((team.local === this.teamSelected || team.visitante === this.teamSelected) && team.estado === 'SCHEDULED') {
+            this.nextGames.push(team);
+          }
+        });
+
+        this.nextGame = this.nextGames[this.nextGames.length - 1];
+
+        console.log(this.nextGame);
+        const gameTime = moment(this.nextGame.fecha);
+
+        if (gameTime.isAfter(moment())) {
+          this.nextGame.isLive = true;
+        }
+      })
     }
   }
 }

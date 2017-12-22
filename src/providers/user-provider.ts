@@ -21,10 +21,10 @@ export class UserProvider {
     });
   }
 
-  signUp(email, password) {
-    this.firebaseProvider.createAccount(email, password).then(authData => {
-      this._userData.next(authData);
-    });
+  signUp(email, password, onError) {
+    this.firebaseProvider.createAccount(email, password)
+      .then(authData => this._userData.next(authData))
+      .catch((error) => onError(error));
   }
 
   selectTeam(team) {

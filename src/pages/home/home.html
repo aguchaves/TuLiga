@@ -7,6 +7,16 @@
   </ion-navbar>
 </ion-header>
 <ion-content>
+  <ion-card *ngIf="nextGame">
+    <h2>Proximo partido</h2>
+    {{nextGame?.local}}
+    vs
+    {{nextGame?.visitante}}
+    {{nextGame?.fecha}}
+    <div *ngIf="nextGame?.isLive">
+      AHORA EN VIVO
+    </div>
+  </ion-card>
   <ion-list>
     <ion-card *ngFor="let result of results">
       <ion-row>

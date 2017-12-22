@@ -48,7 +48,6 @@ export class FirebaseProvider {
         }
 
         this.userData = user;
-        console.log('setUserData', user);
         resolve(user);
       });
     });

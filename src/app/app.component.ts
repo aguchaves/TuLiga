@@ -71,6 +71,6 @@ export class MyApp {
   }
 
   logOut() {
-    this.userProvider.logOut().then(() => this.rootPage = LoginPage);
+    this.userProvider.logOut().then(() => this.navChild.setRoot(LoginPage));
   }
 }
