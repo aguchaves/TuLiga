@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SocialPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UserProvider } from '../../providers/user-provider';
+import twitterFetcher from 'twitter-fetcher';
 
 @IonicPage()
 @Component({
@@ -14,12 +9,42 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'social.html',
 })
 export class SocialPage {
+  tweets: any = [];
+  twitterAccounts: any = {
+    'San Lorenzo': 'caslabasquet',
+    'Weber Bahia': 'bahiabasket',
+    'Gimnasia CR': 'gyecr',
+    'Boca': 'bocabasquet'
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private userProvider: UserProvider
+  ) {
+    this.userProvider.userData.subscribe(userData => {
+      if (userData && userData.storedData && userData.storedData.team !== '') {
+        const team = userData.storedData.team;
+
+        const configProfile = {
+          customCallback: (tweets) => {
+            console.log(tweets);
+            this.tweets = tweets;
+          },
+          profile: { screenName: this.twitterAccounts[team] },
+          enableLinks: true,
+          showUser: true,
+          showTime: true,
+          showRetweet: false,
+          lang: 'es',
+          maxTweets: 30,
+          showImages: true,
+          showInteraction: false
+        };
+        twitterFetcher.fetch(configProfile);
+      }
+    }, err => console.error(err));
+
+
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SocialPage');
-  }
-
 }

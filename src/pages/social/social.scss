@@ -1,6 +1,42 @@
 .social {
-  iframe {
+  color: white;
+
+  ion-spinner {
     width: 100%;
-    height: 100%;
+    margin-top: 40vh;
+  }
+
+  p {
+    color: white;
+  }
+
+  ion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid white;
+  }
+
+  .user {
+    img {
+      border-radius: 50%;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .media {
+    width: 100%;
+  }
+
+  .timePosted {
+    order: 1;
   }
 }
