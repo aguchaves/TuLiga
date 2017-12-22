@@ -56,7 +56,7 @@ export class LoginPage {
   handleSignUpError(error) {
     const alert = this.alertCtrl.create({
       title: 'Lo sentimos',
-      subTitle: this.errorCodes[error.code],
+      subTitle: this.errorCodes[error.code] || error.message,
       buttons: ['Aceptar']
     });
 

@@ -54,7 +54,6 @@ export class FirebaseProvider {
   }
 
   createAccount(email, password) {
-    console.log('createAccount');
     return new Promise((resolve, reject) => {
       this.auth.createUserWithEmailAndPassword(email, password)
         .then(user => {

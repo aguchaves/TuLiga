@@ -43,15 +43,15 @@ export class HomePage {
       this.teamsProvider.getMatches().then(results => {
         this.teamSelected = _.toUpper(userData.storedData.team);
 
-        _.each(results, (team) => {
-          if ((team.local === this.teamSelected || team.visitante === this.teamSelected) && team.estado === 'SCHEDULED') {
-            this.nextGames.push(team);
+        _.each(_.reverse(results), (teamMatch) => {
+          if (
+            (teamMatch.local === this.teamSelected || teamMatch.visitante === this.teamSelected)
+            && teamMatch.estado === 'SCHEDULED'
+            && moment(teamMatch.fecha).isAfter(moment()) ) {
+            this.nextGame = teamMatch;
           }
         });
 
-        this.nextGame = this.nextGames[this.nextGames.length - 1];
-
-        console.log(this.nextGame);
         const gameTime = moment(this.nextGame.fecha);
 
         if (gameTime.isAfter(moment())) {
