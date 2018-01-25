@@ -15,10 +15,10 @@ export class UserProvider {
     return this._userData;
   }
 
-  logIn(email, password) {
-    this.firebaseProvider.logIn(email, password).then(authData => {
-      this._userData.next(authData);
-    });
+  logIn(email, password, onError) {
+    this.firebaseProvider.logIn(email, password)
+      .then(authData => this._userData.next(authData))
+      .catch(error => onError(error));
   }
 
   signUp(email, password, onError) {

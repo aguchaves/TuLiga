@@ -54,7 +54,7 @@ export class HomePage {
             this.nextGame.isLive = false;
           }
         });
-        
+
         const gameTime = moment(this.nextGame.fecha);
 
         if (gameTime.isSameOrAfter(moment()) && (gameTime.hour() <= moment().hour())) {

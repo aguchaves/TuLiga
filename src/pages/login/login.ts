@@ -14,7 +14,8 @@ export class LoginPage {
   email: String = '';
   password: String = '';
   errorCodes: Object = {
-    'auth/email-already-in-use': 'El mail ya esta en uso por otra cuenta'
+    'auth/email-already-in-use': 'El mail ya esta en uso por otra cuenta',
+    'auth/wrong-password': 'La contraseña es invalida',
   };
 
   constructor(
@@ -43,7 +44,7 @@ export class LoginPage {
 
   handleLogin() {
     if (this.email !== '' && this.password !== '') {
-      this.userProvider.logIn(this.email, this.password);
+      this.userProvider.logIn(this.email, this.password, this.handleSignUpError.bind(this));
     }
   }
 
