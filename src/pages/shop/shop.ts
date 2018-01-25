@@ -12,7 +12,7 @@ import { TabsPage } from '../tabs/tabs';
 export class ShopPage {
 
   stores: Object = {
-    'Gimnasia CR': 'https://www.gyestore.com.ar/',
+    'Gimnasia (CR)': 'https://www.gyestore.com.ar/',
     'Obras': 'http://www.obras-store.com/',
     'Boca': 'https://www.bocashop.com.ar/',
     'Instituto': 'http://www.institutoacc.com.ar/index.php/tienda-online/',
@@ -38,7 +38,7 @@ export class ShopPage {
     if (userData && userData.storedData && userData.storedData.team !== '') {
       const team = userData.storedData.team;
 
-      console.log('selected team', team);
+      console.log('selected team', team, userData);
 
       if (this.stores[team]) {
         this.url = this.stores[team];
