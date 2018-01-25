@@ -26,8 +26,6 @@ export class HomePage {
     this.userProvider.userData.subscribe(userData => {
       this.handleResults(userData);
     }, err => console.error(err));
-
-
   }
 
   handleResults(userData) {
