@@ -1,6 +1,9 @@
 <ion-menu [content]="content">
   <ion-content>
     <ion-list>
+      <ion-item *ngIf="selectedTeam">
+        <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{selectedTeam}}" alt="">
+      </ion-item>
       <ion-item menuClose (click)="navigateToPage('TabsPage')">
         Inicio
       </ion-item>
@@ -24,6 +27,9 @@
       </ion-item>
       <ion-item menuClose (click)="navigateToPage('ContactPage')">
         Contacto
+      </ion-item>
+      <ion-item menuClose (click)="navigateToPage('SettingsPage')">
+        Ajustes
       </ion-item>
       <ion-item menuClose (click)="logOut()">
         Cerrar Sesion

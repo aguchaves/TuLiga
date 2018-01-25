@@ -7,12 +7,14 @@
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
   <ion-list>
     <ion-item>
       <ion-label>Notificaciónes de próximos partidos</ion-label>
       <ion-toggle checked></ion-toggle>
+    </ion-item>
+    <ion-item (click)="handleChangeTeam()">
+      <ion-label>Cambiar equipo seleccionado</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

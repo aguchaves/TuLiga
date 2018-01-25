@@ -29,13 +29,15 @@ export class SelectTeamPage {
   }
 
   handleResults(userData) {
-    if (userData && userData.storedData && userData.storedData.team !== '') {
-      this.navCtrl.push(TabsPage);
+    if (userData && userData.storedData && userData.storedData.team && userData.storedData.team !== '') {
+      console.log(userData);
     }
   }
 
   selectTeam(team) {
-    this.userProvider.selectTeam(team.club);
+    console.log(team);
+    this.userProvider.selectTeam(team.club, team.logo);
+    this.navCtrl.push(TabsPage);
   }
 
 }

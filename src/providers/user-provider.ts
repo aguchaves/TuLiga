@@ -27,8 +27,9 @@ export class UserProvider {
       .catch((error) => onError(error));
   }
 
-  selectTeam(team) {
-    this.firebaseProvider.setTeam(this._userData.getValue().uid, team).then(userData => {
+  selectTeam(team, logo) {
+    console.log('selectTeam', team, logo);
+    this.firebaseProvider.setTeam(this._userData.getValue().uid, team, logo).then(userData => {
       this._userData.next(userData);
     });
   }
@@ -37,6 +38,7 @@ export class UserProvider {
     return new Promise(resolve => {
       this.firebaseProvider.isUserLoggedIn().then(userData => {
         this._userData.next(userData);
+        resolve();
       });
     });
   }

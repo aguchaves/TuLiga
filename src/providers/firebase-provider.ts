@@ -69,11 +69,14 @@ export class FirebaseProvider {
     });
   }
 
-  setTeam(userUid, team) {
+  setTeam(userUid, team, logo) {
+    console.log('setTeam', team, logo);
+
     return new Promise((resolve, reject) => {
-      this.app.database().ref(`/users/${userUid}/team`).set(team).then(() => {
+      this.app.database().ref(`/users/${userUid}`).update({ team, logo }).then(() => {
         this.userData.storedData = {};
         this.userData.storedData.team = team;
+        this.userData.storedData.logo = logo;
 
         resolve(this.userData);
       });

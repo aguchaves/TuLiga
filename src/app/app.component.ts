@@ -33,6 +33,7 @@ export class MyApp {
     'ContactPage': ContactPage,
   };
   loading: Boolean = true;
+  selectedTeam: String;
 
   @ViewChild(Nav) navChild:Nav;
 
@@ -50,13 +51,20 @@ export class MyApp {
 
     loader.present();
 
-    this.userProvider.isLoggedIn().then((user) => {
-      if (user) {
-        this.rootPage = TabsPage;
+    this.userProvider.isLoggedIn().then(user => {
+      if (user && (<any>user).team) {
+        this.navChild.setRoot(TabsPage);
       }
 
       loader.dismiss();
     });
+
+    this.userProvider.userData.subscribe(userData => {
+      console.log('userData app component', userData);
+      if (userData) {
+        this.selectedTeam = userData.storedData.logo;
+      }
+    }, err => console.error(err));
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
