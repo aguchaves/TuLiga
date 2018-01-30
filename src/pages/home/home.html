@@ -3,21 +3,53 @@
     <button ion-button menuToggle="left">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Resultados</ion-title>
+    <ion-title>Inicio</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-card *ngIf="nextGame">
-    <h2>Proximo partido</h2>
-    {{nextGame?.local}}
-    vs
-    {{nextGame?.visitante}}
-    {{nextGame?.fecha}}
-    <div *ngIf="nextGame?.isLive">
-      <a href="{{nextGame.boxscore}}" target="_self">
-        AHORA EN VIVO
-      </a>
-    </div>
+  <ion-card *ngIf="nextGame" class="next-game">
+    <ion-card-header class="header">
+      <h2>Próximo Partido</h2>
+    </ion-card-header>
+    <ion-row>
+      <ion-col col-5>
+        <div class="match-team">
+          <div class="img-wrapper">
+            <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{nextGame?.logolocal}}" alt="">
+          </div>
+          <p>{{nextGame?.local}}</p>
+        </div>
+      </ion-col>
+      <ion-col col-2 class="divisor">
+        <div class="divisor-bg" id="vs">
+          <h1>VS</h1>
+        </div>
+        <div *ngIf="nextGame?.isLive"class="divisor-bg-now">
+          <div>
+            <div class="">
+              <p>AHORA</p>
+            </div>
+            <div class="">
+              <a href="{{nextGame?.boxscore}}" target="_self">
+                <h1><ion-icon name="basketball"></ion-icon></h1>
+              </a>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-5>
+        <div class="match-team">
+          <div class="img-wrapper">
+            <img src="http://www.laliganacional.com.ar/uploadsfotos/clubes/{{nextGame?.logovisitante}}" alt="">
+          </div>
+          <p>{{nextGame?.visitante}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-card-content class="match-data">
+      <h4><ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>{{nextGame?.fecha}}</h4>
+      <h4><ion-icon name="pin"></ion-icon>{{nextGame?.estadio}}</h4>
+    </ion-card-content>
   </ion-card>
   <ion-list>
     <ion-card *ngFor="let result of results">

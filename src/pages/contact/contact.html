@@ -7,8 +7,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="contact">
-  <p>
-    {{info?.text}}
-  </p>
+<ion-content class="contact">
+  <ion-card class="contact-card">
+    <ion-card-header class="header">
+      <h1>Contacto</h1>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{info?.text1}}</p>
+      <p>{{info?.text2}}</p>
+      <p>{{info?.text3}}</p>
+    </ion-card-content>
+    <img src="{{info?.img}}" alt="">
+  </ion-card>
+
 </ion-content>

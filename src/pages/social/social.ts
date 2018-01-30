@@ -13,7 +13,7 @@ export class SocialPage {
   twitterAccounts: any = {
     'San Lorenzo': 'caslabasquet',
     'Weber Bahia': 'bahiabasket',
-    'Gimnasia CR': 'gyecr',
+    'Gimnasia CR': 'GyECR',
     'Boca': 'bocabasquet'
   };
 

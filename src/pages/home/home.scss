@@ -2,6 +2,34 @@ page-home {
   .card {
     padding: 10px;
   }
+  .next-game {
+    background-image: url(../assets/imgs/next-game-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    .header {
+      text-align: center;
+      h2 {
+        color: #fff;
+        text-shadow: 1px 4px 6px #000;
+        text-transform: uppercase;
+      }
+    }
+    .match {
+      &-team {
+        .img-wrapper {
+          height: 120px;
+          max-height: 120px;
+          img {
+            width: 80%;
+            max-height: 120px;
+          }
+        }
+        p {
+          text-shadow: 1px 4px 6px #000;
+        }
+      }
+    }
+  }
   .match{
     &-team {
       text-align: center;
@@ -43,9 +71,35 @@ page-home {
     display: flex;
     margin: auto;
     text-align: center;
+    .divisor-bg {
+      background: color($colors, dark);
+      border-radius:50%;
+      display: flex;
+      margin: auto;
+    }
+    .divisor-bg-now {
+      background: color($colors, dark);
+      margin: auto;
+      padding: 5px;
+      a {
+        margin: auto;
+      }
+      P {
+        color: color($colors,light);
+        font-size: 10px;
+      }
+      h1 {
+        color: color($colors, primary);
+        padding: 0;
+        margin: auto;
+        font-size: 30px;
+      }
+    }
     h1 {
-      width: 100%;
       color: color($colors,light);
+      font-size: 20px;
+      margin: auto;
+      padding: 10px;
     }
   }
 
