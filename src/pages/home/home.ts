@@ -57,7 +57,6 @@ export class HomePage {
 
         if (gameTime.isSameOrAfter(moment()) && (gameTime.hour() <= moment().hour())) {
           this.nextGame.isLive = true;
-          document.getElementById("vs").style.display = "none";
         }
 
       })
