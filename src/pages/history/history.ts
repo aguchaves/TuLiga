@@ -36,7 +36,6 @@ export class HistoryPage {
   }
 
   ionViewWillEnter() {
-    console.log('ionViewDidLoad');
     this.userProvider.userData.subscribe(userData => {
       this.handleResults(userData);
     }, err => console.error(err));

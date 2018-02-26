@@ -28,7 +28,6 @@ export class UserProvider {
   }
 
   selectTeam(team, logo) {
-    console.log('selectTeam', team, logo);
     this.firebaseProvider.setTeam(this._userData.getValue().uid, team, logo).then(userData => {
       this._userData.next(userData);
     });

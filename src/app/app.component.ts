@@ -60,7 +60,6 @@ export class MyApp {
     });
 
     this.userProvider.userData.subscribe(userData => {
-      console.log('userData app component', userData);
       if (userData) {
         this.selectedTeam = userData.storedData.logo;
       }

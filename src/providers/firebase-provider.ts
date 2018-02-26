@@ -70,8 +70,6 @@ export class FirebaseProvider {
   }
 
   setTeam(userUid, team, logo) {
-    console.log('setTeam', team, logo);
-
     return new Promise((resolve, reject) => {
       this.app.database().ref(`/users/${userUid}`).update({ team, logo }).then(() => {
         this.userData.storedData = {};
