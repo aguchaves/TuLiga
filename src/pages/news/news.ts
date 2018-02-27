@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TabsPage } from '../tabs/tabs';
+import { UserProvider } from '../../providers/user-provider';
 
 @IonicPage()
 @Component({
@@ -9,33 +10,57 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'news.html',
 })
 export class NewsPage {
+  news: Object = {
+    'San Lorenzo': {
+      url: 'http://www.laliganacional.com.ar/laliga/club/san-lorenzo/page/noticias'
+    },
+    'Gimnasia (CR)': {
+      url: 'http://www.laliganacional.com.ar/laliga/club/gecr/page/noticias'
+    },
+    'Boca': {
+      url: ''
+    }
+  };
+  team: any = '';
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private iab: InAppBrowser) {
+    private iab: InAppBrowser,
+    private userProvider: UserProvider
+  ) {
   }
 
   ionViewDidLoad() {
-    const browser = this.iab.create('http://www.laliganacional.com.ar/laliga/club/san-lorenzo/page/noticias', '_self', {
-      location: 'no'
-    });
+    this.userProvider.userData.subscribe(userData => {
+      this.handleResults(userData);
+    }, err => console.error(err));
+  }
 
-    browser.on('loadstop').subscribe(() => {
-      console.log('loaded page');
+  handleResults(userData) {
+    if (userData && userData.storedData && userData.storedData.team !== '') {
+      this.team = userData.storedData.team;
 
-      browser.insertCSS({
-        code: '.navbar { display: none; } #clubheader { display: none; } .espacio { display: none }'
-      }).then(() => {
-        console.log('css added');
-        browser.show();
+      console.log(this.team, this.news);
+      const browser = this.iab.create(this.news[this.team], '_self', {
+        location: 'no'
       });
-    });
 
-    browser.on('exit').subscribe(() => {
-      console.log('closed browser');
-      this.navCtrl.push(TabsPage);
-    });
+      browser.on('loadstop').subscribe(() => {
+        console.log('loaded page');
 
+        browser.insertCSS({
+          code: '.navbar { display: none; } #clubheader { display: none; } .espacio { display: none }'
+        }).then(() => {
+          console.log('css added');
+          browser.show();
+        });
+      });
+
+      browser.on('exit').subscribe(() => {
+        console.log('closed browser');
+        this.navCtrl.push(TabsPage);
+      });
+    }
   }
 }

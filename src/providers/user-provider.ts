@@ -42,6 +42,10 @@ export class UserProvider {
     });
   }
 
+  getAllUsers() {
+    return this.firebaseProvider.getAllUsers();
+  }
+
   logOut() {
     return this.firebaseProvider.logOut();
   }

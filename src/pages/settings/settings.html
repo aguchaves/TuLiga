@@ -16,5 +16,8 @@
     <ion-item (click)="handleChangeTeam()">
       <ion-label>Cambiar equipo seleccionado</ion-label>
     </ion-item>
+    <ion-item *ngIf="isAdmin" (click)="goToReportPage()">
+      <ion-label>Reportes</ion-label>
+    </ion-item>
   </ion-list>
 </ion-content>

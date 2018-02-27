@@ -21,6 +21,7 @@ import { ShopPage } from "../pages/shop/shop";
 import { SocialPage } from "../pages/social/social";
 import { TvPage } from "../pages/tv/tv";
 import { ContactPage } from "../pages/contact/contact";
+import { ReportPage } from "../pages/report/report";
 
 // Providers
 import { FirebaseProvider } from '../providers/firebase-provider';
@@ -46,6 +47,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SocialPage,
     TvPage,
     ContactPage,
+    ReportPage,
   ],
   imports: [
     HttpModule,
@@ -69,6 +71,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
     SocialPage,
     TvPage,
     ContactPage,
+    ReportPage,
   ],
   providers: [
     FirebaseProvider,

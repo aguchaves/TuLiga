@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Reportes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Cantidad de usuarios por equipo
+    </ion-list-header>
+    <ion-item *ngFor="let team of statistics">
+      <span>
+        {{team.name}}
+      </span>
+      <span item-end>
+        {{team.percentage}}%
+        ({{team.fans}})
+      </span>
+    </ion-item>
+  </ion-list>
+</ion-content>

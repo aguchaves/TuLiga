@@ -93,6 +93,18 @@ export class FirebaseProvider {
     });
   }
 
+  getAllUsers() {
+    return new Promise(resolve => {
+      this.app.database().ref('/users').once('value',snapshot => {
+        if (snapshot.val()) {
+          resolve(snapshot.val());
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+
   logOut() {
     return this.app.auth().signOut();
   }
